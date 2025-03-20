@@ -1,4 +1,4 @@
-package exercicio_bilheteunico;
+package testes;
 
 import java.util.Random;
 

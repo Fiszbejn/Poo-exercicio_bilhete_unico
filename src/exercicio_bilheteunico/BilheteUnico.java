@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class BilheteUnico {
     static final double TARIFA = 5.20;
-    double saldo;
+    double saldo = 0.00;
     long numero;
     Usuario usuario;
 
@@ -23,10 +23,11 @@ public class BilheteUnico {
     public double consultaSaldo() {
         return saldo;
     }
+
     //método para passar na catraca
     public String passarNaCatraca() {
         double debito = TARIFA / 2;
-        if (usuario.perfil.equalsIgnoreCase("normal")) {
+        if (usuario.perfil.equalsIgnoreCase("comum")) {
             debito = TARIFA;
         }
         if(saldo >= debito) {
