@@ -45,6 +45,9 @@ public class Util {
                 case 2:
                     listarBilhetes();
                     break;
+                case 3:
+                    excluirBilhete();
+                    break;
             }
         }while(opcao != 4);
     }
@@ -105,6 +108,18 @@ public class Util {
                     + "\nCPF: " + bilhete[i].usuario.cpf + "\n\n";
         }
         showMessageDialog(null, aux);
+    }
+
+    private void excluirBilhete() {
+        int resposta;
+        int indice = pesquisaBilhete();
+        if(indice != -1) {
+            resposta = showConfirmDialog(null,"Tem certeza que deseja excluir?");
+            if(resposta == YES_OPTION) {
+                bilhete[indice] = bilhete[index - 1];
+                index--;
+            }
+        }
     }
 
     private int pesquisaBilhete() {
